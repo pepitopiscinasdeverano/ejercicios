@@ -32,6 +32,10 @@ int main(){
 
 			printf("Introdueix una cadena a xifrar: ");
 			fgets(frase,dim-1,stdin);
+			printf("Introdueix el numero de posicions a desplaçar: ");
+			scanf("%d",&des);
+			printf("Introdueix la direccio (+/-): ");
+			scanf("%c",&dir);
 			getchar();
 
 
