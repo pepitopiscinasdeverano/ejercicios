@@ -45,51 +45,51 @@ int main(){
 		case 1:
 			for(i=0;i<strlen(frase);i++){
 				if(frase[i]!='\0'){
-				if(frase[i]==' '){
-					resultat[i]=' ';
-				}
-				else{
-					for(j=0;j<27;j++){
-						if(toupper(frase[i])==ABC[j]){
-							if(j+des>26){
-								resultat[i]=(ABC[j]-26)+des;
+					if(frase[i]==' '){
+						resultat[i]=' ';
+					}
+					else{
+						for(j=0;j<26;j++){
+							if(toupper(frase[i])==ABC[j]){
+								if(j+des>26){
+									resultat[i]=(ABC[j]-26)+des;
+								}
+								else{
+									resultat[i]=ABC[j]+des;
+								}
 							}
-							else{
-								resultat[i]=ABC[j]+des;
-							}
-						}
 
+						}
 					}
 				}
-				}
 			}
-			resultat[strlen(frase)]='\0';
+			resultat[strlen(frase)-1]='\0';
 			puts(resultat);
 
 			break;
 		case 2:
 			for(i=0;i<strlen(frase);i++){
-							if(frase[i]!='\0'){
-							if(frase[i]==' '){
-								resultat[i]=' ';
-							}
-							else{
-								for(j=0;j<27;j++){
-									if(toupper(frase[i])==ABC[j]){
-										if(j+des<0){
-											resultat[i]=(ABC[j]+26)-des;
-										}
-										else{
-											resultat[i]=ABC[j]-des;
-										}
-									}
-
+				if(frase[i]!='\0'){
+					if(frase[i]==' '){
+						resultat[i]=' ';
+					}
+					else{
+						for(j=0;j<26;j++){
+							if(toupper(frase[i])==ABC[j]){
+								if(j-des<0){
+									resultat[i]=(ABC[j]+26)-des;
+								}
+								else{
+									resultat[i]=ABC[j]-des;
 								}
 							}
-							}
+
 						}
-						resultat[strlen(frase)]='\0';
-						puts(resultat);
+					}
+				}
+			}
+			resultat[strlen(frase)-1]='\0';
+			puts(resultat);
 			break;
 		}
 
@@ -97,70 +97,70 @@ int main(){
 		case 2:
 			printf("desxifrar\n");
 			printf("Introdueix una cadena a desxifrar: ");
-					fgets(frase,dim-1,stdin);
-					printf("Introdueix el numero de caracters a desplaçar: ");
-					scanf("%d",&des);
-					getchar();
-					printf("Introdueix la direccio: ");
-					printf("1. sumar\n 2. restar\n");
-					scanf("%d", &dir);
-					getchar();
-					switch(dir){
-					case 1:
-						for(i=0;i<strlen(frase);i++){
-							if(frase[i]!='\0'){
-							if(frase[i]==' '){
-								resultat[i]=' ';
-							}
-							else{
-								for(j=0;j<27;j++){
-									if(toupper(frase[i])==ABC[j]){
-										if(j+des>26){
-											resultat[i]=(ABC[j]-26)+des;
-										}
-										else{
-											resultat[i]=ABC[j]+des;
-										}
+			fgets(frase,dim-1,stdin);
+			printf("Introdueix el numero de caracters a desplaçar: ");
+			scanf("%d",&des);
+			getchar();
+			printf("Introdueix la direccio: ");
+			printf("1. sumar\n 2. restar\n");
+			scanf("%d", &dir);
+			getchar();
+			switch(dir){
+			case 1:
+				for(i=0;i<strlen(frase);i++){
+					if(frase[i]!='\0'){
+						if(frase[i]==' '){
+							resultat[i]=' ';
+						}
+						else{
+							for(j=0;j<26;j++){
+								if(toupper(frase[i])==ABC[j]){
+									if(j+des>26){
+										resultat[i]=(ABC[j]-26)+des;
 									}
-
+									else{
+										resultat[i]=ABC[j]+des;
+									}
 								}
-							}
+
 							}
 						}
-						resultat[strlen(frase)]='\0';
-						puts(resultat);
-
-						break;
-					case 2:
-						for(i=0;i<strlen(frase);i++){
-										if(frase[i]!='\0'){
-										if(frase[i]==' '){
-											resultat[i]=' ';
-										}
-										else{
-											for(j=0;j<27;j++){
-												if(toupper(frase[i])==ABC[j]){
-													if(j-des<0){
-														resultat[i]=(ABC[j]+26)-des;
-													}
-													else{
-														resultat[i]=ABC[j]-des;
-													}
-												}
-
-											}
-										}
-										}
-									}
-									resultat[strlen(frase)]='\0';
-									puts(resultat);
-						break;
 					}
+				}
+				resultat[strlen(frase)-1]='\0';
+				puts(resultat);
+
+				break;
+			case 2:
+				for(i=0;i<strlen(frase);i++){
+					if(frase[i]!='\0'){
+						if(frase[i]==' '){
+							resultat[i]=' ';
+						}
+						else{
+							for(j=0;j<26;j++){
+								if(toupper(frase[i])==ABC[j]){
+									if(j-des<0){
+										resultat[i]=(ABC[j]+26)-des;
+									}
+									else{
+										resultat[i]=ABC[j]-des;
+									}
+								}
+
+							}
+						}
+					}
+				}
+				resultat[strlen(frase)-1]='\0';
+				puts(resultat);
+				break;
+			}
 
 			break;
-		case 3:
-			return 0;
-			break;
+			case 3:
+				return 0;
+				break;
 	}
 
 	return 0;
