@@ -21,7 +21,7 @@ int main(){
 
 	int opcio=0;
 	char frase[dim];
-	char ABC[27]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+	char ABC[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 	char resultat[dim];
 	int des,dir,i,j;
 
@@ -58,7 +58,6 @@ int main(){
 									resultat[i]=ABC[j]+des;
 								}
 							}
-
 						}
 					}
 				}
@@ -83,7 +82,6 @@ int main(){
 									resultat[i]=ABC[j]-des;
 								}
 							}
-
 						}
 					}
 				}
@@ -122,7 +120,6 @@ int main(){
 										resultat[i]=ABC[j]+des;
 									}
 								}
-
 							}
 						}
 					}
@@ -147,7 +144,6 @@ int main(){
 										resultat[i]=ABC[j]-des;
 									}
 								}
-
 							}
 						}
 					}
